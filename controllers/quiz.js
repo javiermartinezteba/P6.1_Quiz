@@ -142,9 +142,9 @@ exports.check = (req, res, next) => {
 };
 
 exports.randomplay = (req, res, next) => {
-    let resolved = req.session.toBeResolved.length;
+    const resolved = req.session.toBeResolved.length;
 
-    let scores =  req.session.score;
+    const scores =  req.session.score;
 
     if (req.session.toBeResolved === undefined) {
         
@@ -170,8 +170,8 @@ exports.randomcheck = (req, res, next) => {
 
     const answer = query.answer || "";
     const result = answer.toLowerCase().trim() === quiz.answer.toLowerCase().trim();
-    let scores =  req.session.score;
-    let resolved = req.session.toBeResolved.length;
+    const scores =  req.session.score;
+    const resolved = req.session.toBeResolved.length;
 
 
 
