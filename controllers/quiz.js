@@ -152,7 +152,7 @@ exports.randomplay = (req, res, next) => {
 
         models.quiz.findAll()
             .then(quizzes => {
-                req.session.quizzes = quizzes;
+                req.session.toBeResolved = quizzes;
                 req.session.index = Math.floor(Math.random() * resolved);
                 const quiz = req.session.quizzes[req.session.index]
                 res.render('quizzes/random_play', {quiz: quiz,score: scores})
